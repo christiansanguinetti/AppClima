@@ -1,0 +1,24 @@
+{
+  "name": "appclima",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christiansanguinetti/AppClima.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christiansanguinetti/AppClima/issues"
+  },
+  "homepage": "https://github.com/christiansanguinetti/AppClima#readme",
+  "dependencies": {
+    "color": "^4.2.3",
+    "inquirer": "^9.1.5"
+  }
+}
