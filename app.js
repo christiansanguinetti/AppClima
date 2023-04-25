@@ -14,9 +14,7 @@ const main = async() => {
     case 1:
    
     const lugar = await leerInput('ciudad: ');
-    console.log(lugar)
-
-
+    busquedas.ciudad(lugar);
 
 
         console.log('\nInformacion de la ciudad\n'.green);
