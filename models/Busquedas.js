@@ -11,8 +11,19 @@ constuctor() {
 async ciudad (lugar = ''){
 try{
 
-  const resp = await axios.get("https://api.mapbox.com/geocoding/v5/mapbox.places/-74.05941436907364,40.740037128383136.json?limit=1&access_token=pk.eyJ1IjoiY2hyaXN0aWFuc2FuZ3VpbmV0dGkiLCJhIjoiY2xnbGN5bnR4MW8zbTNnbzIwcm92NWhxNiJ9.x6usOAwWWhT9-M85uoIsow");
-  console.log(resp);
+ const intance = axios.create({
+  baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
+  params: {
+    'access_token': pk.eyJ1IjoiY2hyaXN0aWFuc2FuZ3VpbmV0dGkiLCJhIjoiY2xnbGN5bnR4MW8zbTNnbzIwcm92NWhxNiJ9.x6usOAwWWhT9-M85uoIsow,
+    'limit':5,
+    'lenguage': 'es'
+  }
+
+
+ }) 
+const resp =  await intance.get();
+console.log (resp.data);
+ 
  return [];
 }
 
