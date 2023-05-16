@@ -14,7 +14,7 @@ try{
  const intance = axios.create({
   baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
   params: {
-    'access_token': pk.eyJ1IjoiY2hyaXN0aWFuc2FuZ3VpbmV0dGkiLCJhIjoiY2xnbGN5bnR4MW8zbTNnbzIwcm92NWhxNiJ9.x6usOAwWWhT9-M85uoIsow,
+    'access_token': process.env.MAPBOX_KEY,
     'limit':5,
     'lenguage': 'es'
   }
@@ -22,9 +22,18 @@ try{
 
  }) 
 const resp =  await intance.get();
-console.log (resp.data);
+return resp.data.features.map(lugar => ({
+  id: lugar.id,
+  nombre: lugar.place_name,
+  lng: lugar.center[0],
+  lat: lugar.center[1]
+
+
+
+
+}))
  
- return [];
+
 }
 
 catch {
