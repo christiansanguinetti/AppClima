@@ -17,10 +17,9 @@ const main = async() => {
     const lugares =  await busquedas.ciudad(lugar);
     const id = await listarlugares(lugares);
     const lug_selec= lugares.find(l=> l.id === id);
+    const clima = await busquedas.ClimaLugar(lug_selec.lat, lug_selec.lng );
     lug_selec
-  
 
-    console.log({id})
 
 
         console.log('\nInformacion de la ciudad\n'.green);
