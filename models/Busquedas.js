@@ -57,13 +57,13 @@ class Busquedas {
         params: {...this.ParamsWeather, lat, lon }
       })
       const resp = await instance.get();
-      console.log(resp);
+      const {weather, main} = resp.data
   
      return{
-      desc:'',
-      min:'',
-      max:'',
-      temp:''
+      desc: weather[0].description,
+      min: main.temp_min,
+      max: main.temp_max,
+      temp:main.temp
      
     } 
   } catch (error) {

@@ -19,6 +19,7 @@ const main = async() => {
     const lug_selec= lugares.find(l=> l.id === id);
     const clima = await busquedas.ClimaLugar(lug_selec.lat, lug_selec.lng );
     lug_selec
+    console.log(clima);
 
 
 
