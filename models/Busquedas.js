@@ -7,14 +7,14 @@ class Busquedas {
   Historial = [];
   dbPath='./db/database.json';
 
-  constuctor() {
+  contuctor() {
     //TODO Leer Db si existe
     this.cargarDB();
   }
   get historialCapitalizado(){
     return this.Historial.map( lugar => {
       let palabras = lugar.split(' ');
-      palabras = palabras.map (p => p[0].toUpperCase() + p.subtring(1));
+      palabras = palabras.map (p => p[0].toUpperCase() + p.substring(1));
       return palabras.join(' ');
     })
   }
@@ -106,7 +106,7 @@ guardarDB(){
 }
 cargarDB(){
  if (!fs.existsSync(this.dbPath)) return;
- const info = fs.readFileSync(this.dbPath, {encoding:'-utf8'});
+ const info = fs.readFileSync(this.dbPath, {encoding:'utf-8'});
  const data = JSON.parse(info);
  this.Historial = data.Historial;
 }
